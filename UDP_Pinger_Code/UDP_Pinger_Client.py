@@ -2,8 +2,8 @@ from socket import *
 import time
 
 # Server details
-serverName = "172.19.203.200" # input server IP address
-serverPort = 12000
+serverName = "" # input server IP address
+serverPort = 12000 # any port between 1024 and 65,535
 
 # UDP socket creation
 clientSocket = socket(AF_INET, SOCK_DGRAM)
