@@ -29,7 +29,6 @@ for i in range(numberOfPings): # setting number of pings to be set
     clientSocket.sendto(message.encode(), (serverName, serverPort))
     
     pings = pings + 1
-    # clientSocket.sendto(message, "")
     
     try:
         message, address = clientSocket.recvfrom(1024)
