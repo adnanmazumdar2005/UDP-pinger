@@ -3,7 +3,7 @@ import time
 
 # Server details
 serverName = "" # input server IP address
-serverPort = 12000 # any port between 1024 and 65,535
+serverPort = 20000 # any port between 1024 and 65,535 (should match UDP_Pinger_Server port)
 
 # UDP socket creation
 clientSocket = socket(AF_INET, SOCK_DGRAM)
