@@ -1,7 +1,7 @@
 import random
 from socket import *
-serverName = "172.21.153.206" # input IP address
-serverPort = 20000
+serverName = "" # input IP address
+serverPort = 20000 # any port between 1024 and 65,535
 # Create a UDP socket
 serverSocket = socket(AF_INET, SOCK_DGRAM)
 # Assign IP address and port nubmer to socket
