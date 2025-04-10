@@ -11,9 +11,8 @@ clientSocket = socket(AF_INET, SOCK_DGRAM)
 # server reply waiting time is set to 1 second, packet is considered lost if it exceeds 1 second
 clientSocket.settimeout(1) 
 
-
-message = input("Press Enter to start pinging") # press enter to start pinging the server
-numberOfPings = int(input("Enter the number of pings you want to send"))
+numberOfPings = int(input("Enter the number of pings you want to send: "))
+message = input("Press Enter to start pinging\n") # press enter to start pinging the server
 
 pings = 0
 packetsLost = 0
