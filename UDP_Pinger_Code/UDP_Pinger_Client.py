@@ -11,8 +11,12 @@ clientSocket = socket(AF_INET, SOCK_DGRAM)
 # server reply waiting time is set to 1 second, packet is considered lost if it exceeds 1 second
 clientSocket.settimeout(1) 
 
-numberOfPings = int(input("Enter the number of pings you want to send: "))
-message = input("Press Enter to start pinging\n") # press enter to start pinging the server
+numberOfPings = 0
+
+while(numberOfPings == 0):
+    numberOfPings = int(input("Enter the number of pings you want to send: "))
+    
+message = input("Press Enter to start pinging") # press enter to start pinging the server
 
 pings = 0
 packetsLost = 0
@@ -52,6 +56,9 @@ clientSocket.close()
         
 print(f"Ping statistics for {serverName}:")
 print(f"Packets: Sent = {pings}, Recieved = {packetsRecieved}, Lost = {packetsLost} ({(packetsLost/pings) * 100}% loss)")
-print(f"Approximate round trip times in seconds: ")
-print(f"Minimum = {min(rttList):.6f}seconds, Maximum = {max(rttList):.6f}seconds, Average = {(sum(rttList)/len(rttList)):.6f}seconds")       
+
+if len(rttList) != 0:
+    print(f"Approximate round trip times in seconds: ")
+    print(f"Minimum = {min(rttList):.6f}seconds, Maximum = {max(rttList):.6f}seconds, Average = {(sum(rttList)/len(rttList)):.6f}seconds")
+
 print()
